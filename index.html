@@ -98,7 +98,8 @@ h1 .accent{color:var(--line-red);}
 .pids-top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;color:#5d5d68;margin-bottom:0.45rem;}
 .pids-line{display:flex;align-items:baseline;gap:0.8rem;font-family:var(--mono);}
 .pids-plat{color:#5d5d68;font-size:0.8rem;}
-.pids-dest{color:var(--amber);font-size:1.05rem;font-weight:700;text-shadow:0 0 12px rgba(255,176,0,0.45);min-height:1.8em;}
+.pids-dest{color:var(--amber);font-size:1.05rem;font-weight:700;text-shadow:0 0 12px rgba(255,176,0,0.45);min-height:1.8em;animation:pidsGlow 3.5s ease-in-out infinite;}
+@keyframes pidsGlow{0%,100%{text-shadow:0 0 12px rgba(255,176,0,0.45);}50%{text-shadow:0 0 20px rgba(255,176,0,0.8),0 0 34px rgba(255,176,0,0.25);}}
 .pids-cursor{display:inline-block;width:0.55em;height:1.05em;background:var(--amber);vertical-align:text-bottom;animation:blink 0.9s step-end infinite;box-shadow:0 0 10px rgba(255,176,0,0.5);}
 @keyframes blink{50%{opacity:0;}}
 .hero-desc{color:#494952;max-width:480px;font-size:0.95rem;margin-bottom:2.2rem;}
@@ -110,8 +111,9 @@ h1 .accent{color:var(--line-red);}
 .btn-white{background:#fff;color:var(--ink);box-shadow:5px 5px 0 rgba(22,22,26,0.25);}
 .btn-white:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 rgba(22,22,26,0.35);}
 .hero-photo{justify-self:center;text-align:center;}
-.photo-frame{width:230px;height:230px;border-radius:50%;border:4px solid var(--ink);padding:7px;background:conic-gradient(var(--line-red) 0 25%,var(--line-blue) 25% 50%,var(--line-green) 50% 75%,var(--line-purple) 75% 100%);}
-.photo-frame img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;border:4px solid var(--paper);}
+.photo-frame{width:230px;height:230px;border-radius:50%;border:4px solid var(--ink);padding:7px;background:conic-gradient(var(--line-red) 0 25%,var(--line-blue) 25% 50%,var(--line-green) 50% 75%,var(--line-purple) 75% 100%);animation:ringSpin 18s linear infinite;}
+.photo-frame img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;border:4px solid var(--paper);animation:ringSpin 18s linear infinite reverse;}
+@keyframes ringSpin{to{transform:rotate(360deg);}}
 .photo-caption{margin-top:0.9rem;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);}
 .photo-caption b{color:var(--ink);}
 
@@ -121,7 +123,8 @@ h1 .accent{color:var(--line-red);}
 .about-text p{color:#43434c;font-size:0.95rem;margin-bottom:1.1rem;}
 .about-text b{color:var(--ink);}
 .exits{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.exit{background:#fff;border:3px solid var(--ink);box-shadow:5px 5px 0 rgba(22,22,26,0.12);padding:1.2rem 1.2rem 1rem;position:relative;}
+.exit{background:#fff;border:3px solid var(--ink);box-shadow:5px 5px 0 rgba(22,22,26,0.12);padding:1.2rem 1.2rem 1rem;position:relative;transition:transform 0.2s,box-shadow 0.2s;}
+.exit:hover{transform:translate(-3px,-3px);box-shadow:8px 8px 0 rgba(22,22,26,0.12);}
 .exit-letter{position:absolute;top:-14px;left:12px;width:28px;height:28px;background:var(--ink);color:#ffd400;font-weight:800;font-size:0.85rem;display:flex;align-items:center;justify-content:center;border-radius:4px;}
 .exit-num{font-weight:800;font-size:2rem;line-height:1.1;}
 .exit-label{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);}
@@ -132,9 +135,18 @@ h1 .accent{color:var(--line-red);}
 .line-chip{font-size:0.66rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#fff;padding:0.25rem 0.7rem;border-radius:99px;border:2px solid var(--ink);}
 .skill-line-zh{font-family:var(--zh);font-weight:700;font-size:0.8rem;color:var(--muted);}
 .track{position:relative;display:flex;justify-content:space-between;padding:0 6px;}
-.track::before{content:'';position:absolute;left:0;right:0;top:9px;height:7px;border-radius:4px;background:var(--tcolor,var(--ink));}
-.track::after{content:'';position:absolute;right:-4px;top:5px;border:8px solid transparent;border-left:11px solid var(--tcolor,var(--ink));}
-.tstop{position:relative;display:flex;flex-direction:column;align-items:center;gap:0.5rem;min-width:0;}
+.track::before{content:'';position:absolute;left:0;right:0;top:9px;height:7px;border-radius:4px;background:var(--tcolor,var(--ink));transform-origin:left center;transform:scaleX(0);transition:transform 0.85s cubic-bezier(0.22,1,0.36,1);}
+.track.track-live::before{transform:scaleX(1);}
+.track::after{content:'';position:absolute;right:-4px;top:5px;border:8px solid transparent;border-left:11px solid var(--tcolor,var(--ink));opacity:0;transition:opacity 0.25s ease 0.65s;}
+.track.track-live::after{opacity:1;}
+.tstop{position:relative;display:flex;flex-direction:column;align-items:center;gap:0.5rem;min-width:0;opacity:0;transform:translateY(10px);transition:opacity 0.45s ease,transform 0.45s ease;}
+.track-live .tstop{opacity:1;transform:translateY(0);}
+.track-live .tstop:nth-child(1){transition-delay:0.15s;}
+.track-live .tstop:nth-child(2){transition-delay:0.25s;}
+.track-live .tstop:nth-child(3){transition-delay:0.35s;}
+.track-live .tstop:nth-child(4){transition-delay:0.45s;}
+.track-live .tstop:nth-child(5){transition-delay:0.55s;}
+.track-live .tstop:nth-child(6){transition-delay:0.65s;}
 .tstop-dot{width:17px;height:17px;border-radius:50%;background:#fff;border:4px solid var(--ink);z-index:1;}
 .tstop-name{font-size:0.72rem;font-weight:700;text-align:center;line-height:1.3;color:#3c3c44;max-width:90px;}
 
@@ -174,7 +186,12 @@ h1 .accent{color:var(--line-red);}
 /* ---------- EXPERIENCE : vertical line diagram ---------- */
 .journey{position:relative;padding-left:3rem;max-width:760px;}
 .journey::before{content:'';position:absolute;left:12px;top:8px;bottom:8px;width:8px;border-radius:4px;background:linear-gradient(var(--line-red),var(--line-blue),var(--line-green),var(--line-purple));}
-.jstop{position:relative;padding-bottom:2.8rem;}
+.jstop{position:relative;padding-bottom:2.8rem;opacity:0;transform:translateX(-18px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.jstop.jlive{opacity:1;transform:translateX(0);}
+.jstop.jlive:nth-child(1){transition-delay:0.05s;}
+.jstop.jlive:nth-child(2){transition-delay:0.15s;}
+.jstop.jlive:nth-child(3){transition-delay:0.25s;}
+.jstop.jlive:nth-child(4){transition-delay:0.35s;}
 .jstop:last-child{padding-bottom:0;}
 .jstop-dot{position:absolute;left:-2.55rem;top:4px;width:24px;height:24px;border-radius:50%;background:#fff;border:5px solid var(--ink);}
 .jstop.interchange .jstop-dot::after{content:'';position:absolute;inset:3px;border-radius:50%;border:3px solid var(--ink);}
@@ -213,13 +230,41 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
 /* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity 0.65s ease,transform 0.65s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
+.station-sign.reveal{transform:translate(-18px,26px);}
+.station-sign.reveal.visible{transform:translate(0,0);}
+.reveal-delay-1{transition-delay:0.1s;}
+.reveal-delay-2{transition-delay:0.2s;}
+.reveal-delay-3{transition-delay:0.3s;}
+.reveal-delay-4{transition-delay:0.4s;}
+
+/* hero entrance */
+.hero-in{opacity:0;transform:translateY(22px);animation:heroIn 0.75s ease forwards;}
+.hero-in-1{animation-delay:0.08s;}
+.hero-in-2{animation-delay:0.22s;}
+.hero-in-3{animation-delay:0.34s;}
+.hero-in-4{animation-delay:0.46s;}
+.hero-in-5{animation-delay:0.58s;}
+.hero-in-6{animation-delay:0.7s;}
+.hero-in-7{animation-delay:0.18s;}
+@keyframes heroIn{to{opacity:1;transform:translateY(0);}}
+
+/* subtle platform drift in hero */
+#hero::after{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(22,22,26,0.018) 79px,rgba(22,22,26,0.018) 80px);animation:platformDrift 22s linear infinite;}
+@keyframes platformDrift{from{background-position:0 0;}to{background-position:320px 0;}}
 
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
-  .reveal{opacity:1;transform:none;transition:none;}
-  .kicker-dot,.pids-cursor,.oct-tap{animation:none;}
+  .reveal,.jstop{opacity:1;transform:none;transition:none;}
+  .station-sign.reveal{transform:none;}
+  .hero-in{opacity:1;transform:none;animation:none;}
+  #hero::after{animation:none;}
+  .kicker-dot,.pids-cursor,.oct-tap,.pids-dest{animation:none;}
+  .photo-frame,.photo-frame img{animation:none;}
+  .track::before{transform:scaleX(1);}
+  .track::after{opacity:1;}
+  .tstop{opacity:1;transform:none;transition:none;}
   #train{transition:none;}
-  .gitem:hover,.octopus:hover,.btn-red:hover,.btn-white:hover{transform:none;}
+  .gitem:hover,.octopus:hover,.btn-red:hover,.btn-white:hover,.exit:hover{transform:none;}
 }
 
 @media(max-width:980px){
@@ -237,6 +282,7 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
   .photo-frame{width:170px;height:170px;}
   .track{flex-wrap:wrap;gap:1.2rem 0;}
   .track::before,.track::after{display:none;}
+  .tstop{opacity:1;transform:none;transition:none;}
   .tstop{flex-direction:row;gap:0.6rem;width:50%;}
   .tstop-name{text-align:left;max-width:none;}
   .sign-zh,.sign-en{font-size:1.25rem;}
@@ -283,23 +329,23 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="hero-kicker"><span class="kicker-dot"></span> Now boarding · available for work · Hong Kong</div>
-        <h1>Ramandeep <span class="accent">Singh</span></h1>
-        <div class="hero-zh">香港 · Android 及 Flutter 開發者 · 識講廣東話</div>
-        <div class="pids">
+        <div class="hero-kicker hero-in hero-in-1"><span class="kicker-dot"></span> Now boarding · available for work · Hong Kong</div>
+        <h1 class="hero-in hero-in-2">Ramandeep <span class="accent">Singh</span></h1>
+        <div class="hero-zh hero-in hero-in-3">香港 · Android 及 Flutter 開發者 · 識講廣東話</div>
+        <div class="pids hero-in hero-in-4">
           <div class="pids-top"><span>Next train 下一班車</span><span id="pids-clock">--:--</span></div>
           <div class="pids-line">
             <span class="pids-plat">PLAT 1</span>
             <span class="pids-dest"><span id="typed"></span><span class="pids-cursor"></span></span>
           </div>
         </div>
-        <p class="hero-desc">Computer Science graduate (2:1 Honours, HKMU). I build mobile apps for Hong Kong's multilingual reality — from a Cyberport robotics platform to an ML-driven hiring app and a bilingual Flutter finance tracker.</p>
-        <div class="hero-cta">
+        <p class="hero-desc hero-in hero-in-5">Computer Science graduate (2:1 Honours, HKMU). I build mobile apps for Hong Kong's multilingual reality — from a Cyberport robotics platform to an ML-driven hiring app and a bilingual Flutter finance tracker.</p>
+        <div class="hero-cta hero-in hero-in-6">
           <a href="#projects" class="btn btn-red">View Projects</a>
           <a href="#contact" class="btn btn-white">Get In Touch</a>
         </div>
       </div>
-      <div class="hero-photo">
+      <div class="hero-photo hero-in hero-in-7">
         <div class="photo-frame"><img src="personal_picture.jpeg" alt="Ramandeep Singh" width="230" height="230"></div>
         <div class="photo-caption"><b>Raman</b> · EN / 廣東話 / हिन्दी / ਪੰਜਾਬੀ</div>
       </div>
@@ -321,7 +367,7 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
         <p>Most recently I built <b>SmartWallet HK</b>, an offline-first bilingual finance app in Flutter — tested, CI-checked, and open source.</p>
         <p>Fluent in English, Hindi and Punjabi, conversational in Cantonese. I bring a language-first mindset to everything I build — it matters in a city like this one.</p>
       </div>
-      <div class="exits reveal">
+      <div class="exits reveal reveal-delay-2">
         <div class="exit"><span class="exit-letter">A</span><div class="exit-num">2:1</div><div class="exit-label">Honours Degree</div></div>
         <div class="exit"><span class="exit-letter">B</span><div class="exit-num" data-target="3">0</div><div class="exit-label">Shipped Products</div></div>
         <div class="exit"><span class="exit-letter">C</span><div class="exit-num" data-target="4">0</div><div class="exit-label">Languages Spoken</div></div>
@@ -339,7 +385,7 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
       <div class="sign-body"><span class="sign-zh">技能</span><span class="sign-en">Skills</span><span class="sign-code">STN 02</span></div>
     </div>
     <div class="skill-lines">
-      <div class="reveal">
+      <div class="reveal reveal-delay-1">
         <div class="skill-line-head"><span class="line-chip" style="background:var(--line-red);">Mobile Line</span><span class="skill-line-zh">流動開發綫</span></div>
         <div class="track" style="--tcolor:var(--line-red);">
           <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">Kotlin / Coroutines</span></div>
@@ -349,7 +395,7 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
           <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">MVVM / Riverpod</span></div>
         </div>
       </div>
-      <div class="reveal">
+      <div class="reveal reveal-delay-2">
         <div class="skill-line-head"><span class="line-chip" style="background:var(--line-blue);">Backend Line</span><span class="skill-line-zh">後端綫</span></div>
         <div class="track" style="--tcolor:var(--line-blue);">
           <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">Firebase</span></div>
@@ -358,7 +404,7 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
           <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">Python</span></div>
         </div>
       </div>
-      <div class="reveal">
+      <div class="reveal reveal-delay-3">
         <div class="skill-line-head"><span class="line-chip" style="background:var(--line-green);">AI Line</span><span class="skill-line-zh">人工智能綫</span></div>
         <div class="track" style="--tcolor:var(--line-green);">
           <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">scikit-learn</span></div>
@@ -367,7 +413,7 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
           <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">ML Integration</span></div>
         </div>
       </div>
-      <div class="reveal">
+      <div class="reveal reveal-delay-4">
         <div class="skill-line-head"><span class="line-chip" style="background:var(--line-purple);">Practice Line</span><span class="skill-line-zh">工程實踐綫</span></div>
         <div class="track" style="--tcolor:var(--line-purple);">
           <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">Git</span></div>
@@ -390,7 +436,7 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
     </div>
 
     <!-- FYP -->
-    <div class="proj reveal">
+    <div class="proj reveal reveal-delay-1">
       <div class="proj-head" style="background:var(--line-red);">
         <span class="proj-station"></span>
         <span class="proj-title">AI-Enhanced Domestic Helper Hiring App</span>
@@ -426,7 +472,7 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
     </div>
 
     <!-- SMARTWALLET -->
-    <div class="proj reveal">
+    <div class="proj reveal reveal-delay-2">
       <div class="proj-head" style="background:var(--line-blue);">
         <span class="proj-station"></span>
         <span class="proj-title">SmartWallet HK</span>
@@ -461,7 +507,7 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
     </div>
 
     <!-- ROBORN -->
-    <div class="proj reveal">
+    <div class="proj reveal reveal-delay-3">
       <div class="proj-head" style="background:var(--line-purple);">
         <span class="proj-station"></span>
         <span class="proj-title">Roborn AI Robotics Platform</span>
@@ -674,30 +720,75 @@ const exitObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){
 const exitsEl=document.querySelector('.exits');
 if(exitsEl)exitObs.observe(exitsEl);
 
+// Skill track draw-in
+const trackObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('track-live');trackObs.unobserve(e.target);}});},{threshold:0.35});
+document.querySelectorAll('.track').forEach(t=>trackObs.observe(t));
+if(prefersReduced)document.querySelectorAll('.track').forEach(t=>t.classList.add('track-live'));
+
+// Journey stops stagger
+const journeyObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.jstop').forEach(s=>s.classList.add('jlive'));journeyObs.unobserve(e.target);}});},{threshold:0.2});
+const journeyEl=document.querySelector('.journey');
+if(journeyEl)journeyObs.observe(journeyEl);
+if(prefersReduced)document.querySelectorAll('.jstop').forEach(s=>s.classList.add('jlive'));
+
 // Train position + active station
 const stops=[...document.querySelectorAll('.stop')];
 const mobileLinks=[...document.querySelectorAll('.mobile-link')];
 const sections=stops.map(s=>document.querySelector(s.getAttribute('href')));
 const train=document.getElementById('train');
-function moveTrain(active){
+let trainX=0;
+
+function stopX(i){
   const route=document.querySelector('.route');
-  if(!route||!train||route.offsetParent===null)return;
-  const dot=stops[active]?.querySelector('.stop-dot');
-  if(!dot)return;
+  const dot=stops[i]?.querySelector('.stop-dot');
+  if(!route||!dot||route.offsetParent===null)return null;
   const routeRect=route.getBoundingClientRect();
   const dotRect=dot.getBoundingClientRect();
-  train.style.left=(dotRect.left+dotRect.width/2-routeRect.left)+'px';
+  return dotRect.left+dotRect.width/2-routeRect.left;
 }
+
+function trainTargetX(){
+  if(!sections.length)return null;
+  const scroll=window.scrollY+window.innerHeight*0.35;
+  for(let i=0;i<sections.length-1;i++){
+    const sec=sections[i],next=sections[i+1];
+    if(!sec||!next)continue;
+    const start=sec.offsetTop,end=next.offsetTop;
+    if(scroll>=start&&scroll<end){
+      const p=(scroll-start)/Math.max(end-start,1);
+      const x0=stopX(i),x1=stopX(i+1);
+      if(x0===null||x1===null)return x0;
+      return x0+(x1-x0)*p;
+    }
+  }
+  return stopX(scroll>=sections[0].offsetTop?sections.length-1:0);
+}
+
 function onScroll(){
   let active=0;
   sections.forEach((sec,i)=>{if(sec&&sec.getBoundingClientRect().top<window.innerHeight*0.4)active=i;});
   stops.forEach((s,i)=>s.classList.toggle('active',i===active));
   mobileLinks.forEach((s,i)=>s.classList.toggle('active',i===active));
-  moveTrain(active);
 }
+
+function animateTrain(){
+  const target=trainTargetX();
+  if(train&&target!==null){
+    trainX+=(target-trainX)*0.14;
+    train.style.left=trainX+'px';
+  }
+  requestAnimationFrame(animateTrain);
+}
+
 window.addEventListener('scroll',onScroll,{passive:true});
 window.addEventListener('resize',onScroll);
 onScroll();
+if(train){
+  const initX=stopX(0);
+  if(initX!==null)trainX=initX;
+  if(!prefersReduced)animateTrain();
+  else train.style.left=trainX+'px';
+}
 </script>
 </body>
 </html>
