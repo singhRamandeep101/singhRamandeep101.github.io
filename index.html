@@ -622,7 +622,7 @@ typeLoop();
 document.querySelectorAll('.hero-in').forEach(el=>{
   el.style.animation='none';
   void el.offsetHeight;
-  el.style.animation='';
+  el.style.removeProperty('animation');
 });
 
 // PIDS clock (HK time)
