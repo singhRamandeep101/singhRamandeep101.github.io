@@ -28,16 +28,9 @@ Save to `docs/screenshots/`, then copy to portfolio root as `smartwallet1.png` �
 
 ## Free APK for recruiters (2 min)
 
-**Option A:** GitHub → SmartWallet-HK → Actions → **Build APK preview** → Run workflow → download artifact.
+**Option A:** Download **[v1.0.0 APK](https://github.com/singhRamandeep101/SmartWallet-HK/releases/tag/v1.0.0)** from GitHub Releases.
 
-**Option B:** Create release tag (builds APK automatically):
-
-```bash
-git tag v1.0.0
-git push origin v1.0.0
-```
-
-Then link the release on LinkedIn / resume.
+**Option B:** Actions → **Build APK preview** → Run workflow → download artifact.
 
 ## Play Store ($25, later)
 
