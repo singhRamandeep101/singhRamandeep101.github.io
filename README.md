@@ -17,3 +17,7 @@ Open `index.html` in a browser, or use any static file server.
 ## Deploy
 
 Pushes to `main` deploy automatically via GitHub Pages.
+
+## Your checklist
+
+See **[CHECKLIST.md](CHECKLIST.md)** for pin repos, screenshots, APK release, and job-hunt steps that need your GitHub UI or device.
