@@ -221,12 +221,11 @@ h1 .accent{color:var(--line-red);}
 .octopus::after{content:'';position:absolute;width:215px;height:215px;border-radius:50%;border:2px solid rgba(255,255,255,0.12);right:-45px;bottom:-95px;pointer-events:none;}
 .oct-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;}
 .oct-brand{display:flex;align-items:center;gap:0.5rem;}
-.oct-logo{width:58px;height:39px;flex-shrink:0;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.28));}
+.oct-logo{width:44px;height:44px;flex-shrink:0;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.25));}
 .oct-word{display:flex;flex-direction:column;line-height:1.05;}
-.oct-en{font-weight:800;font-size:1.08rem;letter-spacing:0.005em;}
-.oct-zh{font-family:var(--zh);font-weight:900;font-size:0.8rem;letter-spacing:0.14em;margin-top:1px;}
+.oct-en{font-weight:800;font-size:1.05rem;letter-spacing:0.02em;}
+.oct-zh{font-family:var(--zh);font-weight:900;font-size:0.78rem;letter-spacing:0.12em;margin-top:2px;opacity:0.95;}
 .oct-right{display:flex;flex-direction:column;align-items:flex-end;gap:0.45rem;text-align:right;}
-.oct-passline{font-family:var(--mono);font-weight:700;font-size:0.62rem;letter-spacing:0.08em;opacity:0.92;}
 .oct-tap{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;opacity:0.9;animation:pulse 1.8s ease infinite;}
 .oct-name{margin-top:auto;font-weight:800;font-size:1.02rem;letter-spacing:0.05em;}
 .oct-role{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;opacity:0.92;}
@@ -675,20 +674,17 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
       <a class="octopus reveal" href="mailto:singhramandeep0910@gmail.com" aria-label="Email Ramandeep Singh" style="text-decoration:none;">
         <div class="oct-top">
           <div class="oct-brand">
-            <svg class="oct-logo" viewBox="0 0 96 64" role="img" aria-label="Octopus logo">
-              <defs>
-                <linearGradient id="octo-g" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#f7941e"/>
-                  <stop offset="48%" stop-color="#8cc63f"/>
-                  <stop offset="100%" stop-color="#0093d0"/>
-                </linearGradient>
-              </defs>
-              <path d="M20,32 C20,16 41,16 48,32 C55,48 76,48 76,32 C76,16 55,16 48,32 C41,48 20,48 20,32 Z" fill="none" stroke="url(#octo-g)" stroke-width="9" stroke-linecap="round"/>
+            <svg class="oct-logo" viewBox="0 0 64 64" role="img" aria-label="Octopus mascot">
+              <path d="M9 34 C9 18 20 8 32 8 C44 8 55 18 55 34 C55 40 55 44 51 44 C48 44 48 39 45 39 C42 39 42 45 38 45 C35 45 35 39 32 39 C29 39 29 45 26 45 C22 45 22 39 19 39 C16 39 16 44 13 44 C9 44 9 40 9 34 Z" fill="#f7943e"/>
+              <circle cx="25" cy="28" r="4.6" fill="#fff"/>
+              <circle cx="39" cy="28" r="4.6" fill="#fff"/>
+              <circle cx="25" cy="28.6" r="2.1" fill="#123a3a"/>
+              <circle cx="39" cy="28.6" r="2.1" fill="#123a3a"/>
+              <path d="M28 34 Q32 37.5 36 34" fill="none" stroke="#123a3a" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
-            <div class="oct-word"><span class="oct-en">Octopus</span><span class="oct-zh">八達通</span></div>
+            <div class="oct-word"><span class="oct-en">DEV PASS</span><span class="oct-zh">全端通行證</span></div>
           </div>
           <div class="oct-right">
-            <span class="oct-passline">dev·pass</span>
             <span class="oct-tap">◉ TAP TO EMAIL</span>
           </div>
         </div>
