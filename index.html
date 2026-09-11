@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ramandeep Singh — Android & Flutter Developer · Hong Kong</title>
-<meta name="description" content="Ramandeep Singh — Android and Flutter developer in Hong Kong. CS graduate (HKMU), ex-Roborn (Cyberport). Portfolio styled as an MTR journey.">
+<title>Ramandeep Singh — Android, Flutter & Full-Stack Developer · Hong Kong</title>
+<meta name="description" content="Ramandeep Singh — Android, Flutter and full-stack developer in Hong Kong. CS graduate (HKMU), ex-Roborn (Cyberport). Ships in Kotlin, Flutter, TypeScript and Python. Portfolio styled as an MTR journey.">
 <meta name="theme-color" content="#e2231a">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="canonical" href="https://singhRamandeep101.github.io/">
+<link rel="canonical" href="https://singhramandeep101.github.io/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ramandeep Singh — Android & Flutter Developer · Hong Kong">
-<meta property="og:description" content="Android and Flutter developer in Hong Kong. CS graduate (HKMU), ex-Roborn (Cyberport). Portfolio styled as an MTR journey.">
-<meta property="og:image" content="https://singhRamandeep101.github.io/personal_picture.jpeg">
-<meta property="og:url" content="https://singhRamandeep101.github.io/">
+<meta property="og:title" content="Ramandeep Singh — Android, Flutter & Full-Stack Developer · Hong Kong">
+<meta property="og:description" content="Android, Flutter and full-stack developer in Hong Kong. CS graduate (HKMU), ex-Roborn (Cyberport). Ships in Kotlin, Flutter, TypeScript and Python. Portfolio styled as an MTR journey.">
+<meta property="og:image" content="https://singhramandeep101.github.io/personal_picture.jpeg">
+<meta property="og:url" content="https://singhramandeep101.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Mono:wght@400;700&family=Noto+Sans+HK:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
@@ -110,6 +110,8 @@ h1 .accent{color:var(--line-red);}
 .btn-red:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);}
 .btn-white{background:#fff;color:var(--ink);box-shadow:5px 5px 0 rgba(22,22,26,0.25);}
 .btn-white:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 rgba(22,22,26,0.35);}
+.btn-dark{background:var(--board);color:#fff;box-shadow:5px 5px 0 var(--ink);}
+.btn-dark:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);}
 .hero-photo{justify-self:center;text-align:center;}
 .photo-frame{width:230px;height:230px;border-radius:50%;border:4px solid var(--ink);padding:7px;background:conic-gradient(var(--line-red) 0 25%,var(--line-blue) 25% 50%,var(--line-green) 50% 75%,var(--line-purple) 75% 100%);animation:ringSpin 10s linear infinite;}
 .photo-frame img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center top;border:4px solid var(--paper);animation:ringSpin 10s linear infinite reverse;}
@@ -213,15 +215,20 @@ h1 .accent{color:var(--line-red);}
 .clink{display:flex;justify-content:space-between;align-items:center;gap:1rem;text-decoration:none;color:#ddd;font-family:var(--mono);font-size:0.8rem;border:2px solid #33333c;padding:0.75rem 1.1rem;transition:border-color 0.2s,color 0.2s;}
 .clink:hover{border-color:var(--amber);color:var(--amber);}
 .clink span:first-child{font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:#6c6c78;}
-.octopus{justify-self:center;width:min(360px,100%);aspect-ratio:1.586;border-radius:18px;background:linear-gradient(135deg,#f9a13a,#ef7d1a 55%,#d96a10);border:3px solid #fff2;box-shadow:0 18px 50px rgba(0,0,0,0.5);padding:1.4rem 1.5rem;display:flex;flex-direction:column;color:#fff;position:relative;overflow:hidden;transition:transform 0.25s;}
+.octopus{justify-self:center;width:min(360px,100%);aspect-ratio:1.586;border-radius:18px;background:linear-gradient(135deg,#18bdac 0%,#0fa091 55%,#0a8074 100%);border:3px solid rgba(255,255,255,0.22);box-shadow:0 18px 50px rgba(0,0,0,0.5);padding:1.3rem 1.4rem;display:flex;flex-direction:column;color:#fff;position:relative;overflow:hidden;transition:transform 0.25s;}
 .octopus:hover{transform:rotate(-2deg) translateY(-4px);}
-.octopus::before{content:'';position:absolute;width:240px;height:240px;border-radius:50%;border:28px solid rgba(255,255,255,0.13);right:-80px;bottom:-90px;}
-.oct-top{display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:0.85rem;letter-spacing:0.04em;}
-.oct-zh{font-family:var(--zh);font-weight:900;}
-.oct-chip{width:38px;height:28px;border-radius:5px;background:linear-gradient(135deg,#ffe9a8,#cfa940);border:1px solid #b3902f;margin-top:0.9rem;}
+.octopus::before{content:'';position:absolute;width:330px;height:330px;border-radius:50%;border:2px solid rgba(255,255,255,0.16);right:-95px;bottom:-150px;pointer-events:none;}
+.octopus::after{content:'';position:absolute;width:215px;height:215px;border-radius:50%;border:2px solid rgba(255,255,255,0.12);right:-45px;bottom:-95px;pointer-events:none;}
+.oct-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;}
+.oct-brand{display:flex;align-items:center;gap:0.5rem;}
+.oct-logo{width:44px;height:44px;flex-shrink:0;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.25));}
+.oct-word{display:flex;flex-direction:column;line-height:1.05;}
+.oct-en{font-weight:800;font-size:1.05rem;letter-spacing:0.02em;}
+.oct-zh{font-family:var(--zh);font-weight:900;font-size:0.78rem;letter-spacing:0.12em;margin-top:2px;opacity:0.95;}
+.oct-right{display:flex;flex-direction:column;align-items:flex-end;gap:0.45rem;text-align:right;}
+.oct-tap{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.12em;opacity:0.9;animation:pulse 1.8s ease infinite;}
 .oct-name{margin-top:auto;font-weight:800;font-size:1.02rem;letter-spacing:0.05em;}
-.oct-role{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.12em;opacity:0.9;}
-.oct-tap{position:absolute;top:1.2rem;right:1.4rem;font-family:var(--mono);font-size:0.56rem;letter-spacing:0.14em;opacity:0.85;animation:pulse 1.8s ease infinite;}
+.oct-role{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;opacity:0.92;}
 
 footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0.68rem;letter-spacing:0.08em;border-top:1px solid #26262e;}
 .foot-inner{max-width:1060px;margin:0 auto;padding:1.6rem 1.5rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
@@ -236,6 +243,7 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
 .reveal-delay-2{transition-delay:0.2s;}
 .reveal-delay-3{transition-delay:0.3s;}
 .reveal-delay-4{transition-delay:0.4s;}
+.reveal-delay-5{transition-delay:0.5s;}
 
 /* hero entrance */
 .hero-in{opacity:0;transform:translateY(36px);animation:heroIn 0.95s cubic-bezier(0.22,1,0.36,1) forwards;}
@@ -321,7 +329,7 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
       <div>
         <div class="hero-kicker hero-in hero-in-1"><span class="kicker-dot"></span> Now boarding · available for work · Hong Kong</div>
         <h1 class="hero-in hero-in-2">Ramandeep <span class="accent">Singh</span></h1>
-        <div class="hero-zh hero-in hero-in-3">香港 · Android 及 Flutter 開發者 · 識講廣東話</div>
+        <div class="hero-zh hero-in hero-in-3">香港 · Android · Flutter · 全端開發者 · 識講廣東話</div>
         <div class="pids hero-in hero-in-4">
           <div class="pids-top"><span>Next train 下一班車</span><span id="pids-clock">--:--</span></div>
           <div class="pids-line">
@@ -329,9 +337,10 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
             <span class="pids-dest"><span id="typed"></span><span class="pids-cursor"></span></span>
           </div>
         </div>
-        <p class="hero-desc hero-in hero-in-5">Computer Science graduate (2:1 Honours, HKMU). I build mobile apps for Hong Kong's multilingual reality — from a Cyberport robotics platform to an ML-driven hiring app and a bilingual Flutter finance tracker.</p>
+        <p class="hero-desc hero-in hero-in-5">Computer Science graduate (2:1 Honours, HKMU). I build mobile and full-stack apps for Hong Kong's multilingual reality — from a Cyberport robotics platform to an ML-driven hiring app, a bilingual Flutter finance tracker, and personal projects in TypeScript and Python.</p>
         <div class="hero-cta hero-in hero-in-6">
           <a href="#projects" class="btn btn-red">View Projects</a>
+          <a href="Ramandeep_Singh_Resume.pdf" class="btn btn-dark" download>Download CV ↓</a>
           <a href="#contact" class="btn btn-white">Get In Touch</a>
         </div>
       </div>
@@ -354,14 +363,14 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
       <div class="about-text reveal">
         <p>I'm Ramandeep — <b>Raman</b> for short. An Android developer based in Hong Kong, graduated with 2:1 Honours in Computer Science from HKMU.</p>
         <p>For my final year project I led a 4-person team shipping an <b>AI-powered domestic helper hiring platform</b> — ML candidate matching, real-time translated chat, and in-app video interviews, delivering a <b>35% efficiency gain</b> over traditional hiring workflows. At <b>Roborn (Cyberport)</b> I built multilingual Android features used live at the Hong Kong Convention and Exhibition Centre.</p>
-        <p>Most recently I built <b>SmartWallet HK</b>, an offline-first bilingual finance app in Flutter — tested, CI-checked, and open source.</p>
+        <p>Since then I've kept shipping: <b>SmartWallet HK</b>, an offline-first bilingual finance app in Flutter (tested, CI-checked, open source); <b>Audiobook</b>, a Python/FastAPI server that turns PDFs and EPUBs into on-device TTS audiobooks with an iPhone PWA; and <b>Akhar</b>, a TypeScript web app for learning Gurmukhi. I'm comfortable across the stack — Kotlin, Flutter, TypeScript and Python.</p>
         <p>Fluent in English, Hindi and Punjabi, conversational in Cantonese. I bring a language-first mindset to everything I build — it matters in a city like this one.</p>
       </div>
       <div class="exits reveal reveal-delay-2">
         <div class="exit"><span class="exit-letter">A</span><div class="exit-num">2:1</div><div class="exit-label">Honours Degree</div></div>
-        <div class="exit"><span class="exit-letter">B</span><div class="exit-num" data-target="3">0</div><div class="exit-label">Shipped Products</div></div>
+        <div class="exit"><span class="exit-letter">B</span><div class="exit-num" data-target="5">0</div><div class="exit-label">Shipped Projects</div></div>
         <div class="exit"><span class="exit-letter">C</span><div class="exit-num" data-target="4">0</div><div class="exit-label">Languages Spoken</div></div>
-        <div class="exit"><span class="exit-letter">D</span><div class="exit-num" data-target="2">0</div><div class="exit-label">Mobile Stacks</div></div>
+        <div class="exit"><span class="exit-letter">D</span><div class="exit-num" data-target="4">0</div><div class="exit-label">Languages Coded</div></div>
       </div>
     </div>
   </div>
@@ -386,24 +395,33 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
         </div>
       </div>
       <div class="reveal reveal-delay-2">
-        <div class="skill-line-head"><span class="line-chip" style="background:var(--line-blue);">Backend Line</span><span class="skill-line-zh">後端綫</span></div>
-        <div class="track" style="--tcolor:var(--line-blue);">
-          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">Firebase</span></div>
-          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">SQLite / Drift</span></div>
-          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">REST APIs</span></div>
-          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">Python</span></div>
+        <div class="skill-line-head"><span class="line-chip" style="background:var(--line-orange);">Web Line</span><span class="skill-line-zh">網頁開發綫</span></div>
+        <div class="track" style="--tcolor:var(--line-orange);">
+          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">TypeScript</span></div>
+          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">JavaScript</span></div>
+          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">HTML / CSS</span></div>
+          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">PWA / Offline</span></div>
         </div>
       </div>
       <div class="reveal reveal-delay-3">
+        <div class="skill-line-head"><span class="line-chip" style="background:var(--line-blue);">Backend Line</span><span class="skill-line-zh">後端綫</span></div>
+        <div class="track" style="--tcolor:var(--line-blue);">
+          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">Python / FastAPI</span></div>
+          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">Firebase</span></div>
+          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">SQLite / Drift</span></div>
+          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">REST APIs</span></div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-4">
         <div class="skill-line-head"><span class="line-chip" style="background:var(--line-green);">AI Line</span><span class="skill-line-zh">人工智能綫</span></div>
         <div class="track" style="--tcolor:var(--line-green);">
           <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">scikit-learn</span></div>
           <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">Chaquopy</span></div>
           <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">pdfplumber</span></div>
-          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">ML Integration</span></div>
+          <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">Kokoro TTS / ONNX</span></div>
         </div>
       </div>
-      <div class="reveal reveal-delay-4">
+      <div class="reveal reveal-delay-5">
         <div class="skill-line-head"><span class="line-chip" style="background:var(--line-purple);">Practice Line</span><span class="skill-line-zh">工程實踐綫</span></div>
         <div class="track" style="--tcolor:var(--line-purple);">
           <div class="tstop"><span class="tstop-dot"></span><span class="tstop-name">Git</span></div>
@@ -520,6 +538,69 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
         </div>
       </div>
     </div>
+
+    <!-- AUDIOBOOK -->
+    <div class="proj reveal reveal-delay-4">
+      <div class="proj-head" style="background:var(--line-green);">
+        <span class="proj-station"></span>
+        <span class="proj-title">Audiobook — PDF/EPUB → On-Device TTS</span>
+        <span class="proj-dates">2026 · PERSONAL PROJECT</span>
+      </div>
+      <div class="proj-body" style="--bcolor:var(--line-green);">
+        <div class="proj-sub">Python · FastAPI · Kokoro TTS / ONNX · iPhone PWA · Offline</div>
+        <p class="proj-desc">A self-hosted pipeline that turns local PDFs and EPUBs into natural-sounding audiobooks — generated on your own machine, then streamed to a phone over Wi-Fi with no cloud in the loop.</p>
+        <ul class="proj-bullets">
+          <li>FastAPI server converts PDF/EPUB files into audiobooks using on-device Kokoro TTS (ONNX runtime) — no paid cloud TTS</li>
+          <li>Companion iPhone Safari PWA plays the whole library over the local network</li>
+          <li>Offline export so generated audiobooks travel without a connection</li>
+          <li>Privacy-first by design: documents and audio never leave your devices</li>
+        </ul>
+        <div class="gallery-wrap" data-optional-gallery>
+          <div class="gallery-label">App screenshots — click to enlarge</div>
+          <div class="gallery">
+            <button class="gitem" type="button" data-src="audiobook1.png" data-alt="Audiobook library"><img src="audiobook1.png" alt="Audiobook library" loading="lazy" width="120" height="230"><div class="gcap">Library</div></button>
+            <button class="gitem" type="button" data-src="audiobook2.png" data-alt="Audiobook player"><img src="audiobook2.png" alt="Audiobook player" loading="lazy" width="120" height="230"><div class="gcap">Player</div></button>
+          </div>
+        </div>
+        <div class="proj-foot">
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Kokoro TTS</span><span class="tag">ONNX</span><span class="tag">PWA</span><span class="tag">Offline-First</span>
+          </div>
+          <a class="proj-link" href="https://github.com/singhRamandeep101/audio-book" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AKHAR -->
+    <div class="proj reveal reveal-delay-5">
+      <div class="proj-head" style="background:var(--line-cyan);color:var(--ink);">
+        <span class="proj-station"></span>
+        <span class="proj-title">Akhar — Gurmukhi Learning App</span>
+        <span class="proj-dates">2026 · PERSONAL PROJECT</span>
+      </div>
+      <div class="proj-body" style="--bcolor:var(--line-cyan);">
+        <div class="proj-sub">TypeScript · Web App · Interactive Learning</div>
+        <p class="proj-desc">A TypeScript web app for learning the Gurmukhi script — built to make an unfamiliar alphabet approachable through hands-on practice rather than rote memorisation.</p>
+        <ul class="proj-bullets">
+          <li>Interactive lessons that introduce Gurmukhi characters step by step</li>
+          <li>Character-tracing practice for building muscle memory of each letterform</li>
+          <li>Quizzes to reinforce recognition and recall</li>
+        </ul>
+        <div class="gallery-wrap" data-optional-gallery>
+          <div class="gallery-label">App screenshots — click to enlarge</div>
+          <div class="gallery">
+            <button class="gitem" type="button" data-src="akhar1.png" data-alt="Akhar lessons"><img src="akhar1.png" alt="Akhar lessons" loading="lazy" width="120" height="230"><div class="gcap">Lessons</div></button>
+            <button class="gitem" type="button" data-src="akhar2.png" data-alt="Akhar tracing"><img src="akhar2.png" alt="Akhar tracing" loading="lazy" width="120" height="230"><div class="gcap">Tracing</div></button>
+          </div>
+        </div>
+        <div class="proj-foot">
+          <div class="tags">
+            <span class="tag">TypeScript</span><span class="tag">Web</span><span class="tag">Interactive Lessons</span><span class="tag">Quizzes</span>
+          </div>
+          <a class="proj-link" href="https://github.com/singhRamandeep101/akhar" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -586,15 +667,29 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
           <a class="clink" href="mailto:singhramandeep0910@gmail.com"><span>Email</span><span>singhramandeep0910@gmail.com</span></a>
           <a class="clink" href="https://www.linkedin.com/in/singh-ramandeep-810223272/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span>singh-ramandeep-810223272</span></a>
           <a class="clink" href="https://github.com/singhRamandeep101" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span>singhRamandeep101</span></a>
+          <a class="clink" href="Ramandeep_Singh_Resume.pdf" download><span>Résumé</span><span>Download PDF ↓</span></a>
           <a class="clink" href="tel:+85252122005"><span>Phone</span><span>+852 5212 2005</span></a>
         </div>
       </div>
-      <a class="octopus reveal" href="mailto:singhramandeep0910@gmail.com" style="text-decoration:none;">
-        <div class="oct-top"><span class="oct-zh">八達通?</span><span>dev·pass</span></div>
-        <div class="oct-chip"></div>
-        <span class="oct-tap">◉ TAP TO EMAIL</span>
+      <a class="octopus reveal" href="mailto:singhramandeep0910@gmail.com" aria-label="Email Ramandeep Singh" style="text-decoration:none;">
+        <div class="oct-top">
+          <div class="oct-brand">
+            <svg class="oct-logo" viewBox="0 0 64 64" role="img" aria-label="Octopus mascot">
+              <path d="M9 34 C9 18 20 8 32 8 C44 8 55 18 55 34 C55 40 55 44 51 44 C48 44 48 39 45 39 C42 39 42 45 38 45 C35 45 35 39 32 39 C29 39 29 45 26 45 C22 45 22 39 19 39 C16 39 16 44 13 44 C9 44 9 40 9 34 Z" fill="#f7943e"/>
+              <circle cx="25" cy="28" r="4.6" fill="#fff"/>
+              <circle cx="39" cy="28" r="4.6" fill="#fff"/>
+              <circle cx="25" cy="28.6" r="2.1" fill="#123a3a"/>
+              <circle cx="39" cy="28.6" r="2.1" fill="#123a3a"/>
+              <path d="M28 34 Q32 37.5 36 34" fill="none" stroke="#123a3a" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+            <div class="oct-word"><span class="oct-en">DEV PASS</span><span class="oct-zh">全端通行證</span></div>
+          </div>
+          <div class="oct-right">
+            <span class="oct-tap">◉ TAP TO EMAIL</span>
+          </div>
+        </div>
         <div class="oct-name">RAMANDEEP SINGH</div>
-        <div class="oct-role">ANDROID & FLUTTER DEVELOPER · HONG KONG</div>
+        <div class="oct-role">ANDROID · FLUTTER · FULL-STACK · HONG KONG</div>
       </a>
     </div>
   </div>
@@ -610,7 +705,7 @@ footer{background:var(--board);color:#6c6c78;font-family:var(--mono);font-size:0
 
 <script>
 // PIDS typed destinations
-const roles=['Android Developer','Flutter Developer','Mobile Engineer','Full-Stack Builder'];
+const roles=['Android Developer','Flutter Developer','Full-Stack Developer','TypeScript · Python'];
 let ri=0,ci=0,del=false;
 const typed=document.getElementById('typed');
 function typeLoop(){
